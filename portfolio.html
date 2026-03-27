@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio | Vishalini Karikaran</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Vishalini<span>.</span></a>
+            
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <nav class="nav-links">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="resume.html" class="nav-item">Resume</a>
+                <a href="portfolio.html" class="nav-item active">Portfolio</a>
+                <a href="contact.html" class="nav-item">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="page-hero">
+        <div class="container">
+            <h1 class="page-title">My Portfolio</h1>
+            <div class="breadcrumb">
+                <a href="index.html">Home</a> &bull; <span>Portfolio</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="portfolio-filter">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="film">Film & Cinema</button>
+                <button class="filter-btn" data-filter="marketing">Marketing</button>
+                <button class="filter-btn" data-filter="social">Social Auto-Initiatives</button>
+                <button class="filter-btn" data-filter="beauty">Beauty</button>
+            </div>
+
+            <!-- Portfolio Grid -->
+            <div class="portfolio-grid">
+                <!-- Item 1: Film -->
+                <div class="portfolio-item" data-category="film">
+                    <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Film Production" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Film & Cinema</span>
+                        <h3 class="portfolio-title">Newborn Cinema Campaign</h3>
+                    </div>
+                </div>
+
+                <!-- Item 2: Marketing -->
+                <div class="portfolio-item" data-category="marketing">
+                    <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marketing Strategy" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Marketing</span>
+                        <h3 class="portfolio-title">Brand Building Strategy</h3>
+                    </div>
+                </div>
+
+                <!-- Item 3: Social -->
+                <div class="portfolio-item" data-category="social">
+                    <img src="https://images.unsplash.com/photo-1593113589914-075568e090a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Impact" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Social Initiatives</span>
+                        <h3 class="portfolio-title">Community Development</h3>
+                    </div>
+                </div>
+
+                <!-- Item 4: Beauty -->
+                <div class="portfolio-item" data-category="beauty">
+                    <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beauty Services" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Beauty</span>
+                        <h3 class="portfolio-title">Editorial Makeup Portfolio</h3>
+                    </div>
+                </div>
+
+                <!-- Item 5: Film -->
+                <div class="portfolio-item" data-category="film">
+                    <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Film Set" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Film & Cinema</span>
+                        <h3 class="portfolio-title">Eelam Cultural Documentary</h3>
+                    </div>
+                </div>
+
+                <!-- Item 6: Marketing -->
+                <div class="portfolio-item" data-category="marketing">
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Content Creation" class="portfolio-img">
+                    <div class="portfolio-overlay">
+                        <span class="portfolio-category">Marketing</span>
+                        <h3 class="portfolio-title">Digital Promo Content</h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px;">
+                <p class="section-subtitle" style="margin: 0 auto 20px;">More creative works and in-depth case studies coming soon.</p>
+                <a href="contact.html" class="btn btn-primary">Start a New Project</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <a href="index.html" class="footer-logo">Vishalini<span>.</span></a>
+                <p class="footer-text">Free-spirited, curious, and fiercely independent. Designing narratives that matter.</p>
+                
+                <div class="social-links" style="justify-content: center;">
+                    <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                    <a href="#" class="social-link" aria-label="Instagram">ig</a>
+                    <a href="#" class="social-link" aria-label="Twitter">tw</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Vishalini Karikaran. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
