@@ -4,136 +4,132 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | Vishalini Karikaran</title>
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Header Navigation -->
-    <header class="header">
-        <div class="container nav-container">
-            <a href="index.html" class="logo">Vishalini<span>.</span></a>
-            
-            <div class="menu-toggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <div class="container sketchbook-page bg-graph">
+        <div class="torn-edge" style="top: -10px; transform: scaleY(-1);"></div>
+        
+        <!-- Header Navigation -->
+        <header class="header">
+            <div class="nav-container">
+                <a href="index.html" class="logo ransom-text">Vishalini.</a>
+                
+                <nav class="nav-links">
+                    <a href="index.html" class="nav-item">Home</a>
+                    <a href="about.html" class="nav-item">Bio</a>
+                    <a href="resume.html" class="nav-item">Resume</a>
+                    <a href="portfolio.html" class="nav-item active">Work</a>
+                    <a href="contact.html" class="nav-item">Contact</a>
+                </nav>
             </div>
-            
-            <nav class="nav-links">
-                <a href="index.html" class="nav-item">Home</a>
-                <a href="about.html" class="nav-item">About</a>
-                <a href="resume.html" class="nav-item">Resume</a>
-                <a href="portfolio.html" class="nav-item active">Portfolio</a>
-                <a href="contact.html" class="nav-item">Contact</a>
-            </nav>
-        </div>
-    </header>
+        </header>
 
-    <!-- Page Hero -->
-    <section class="page-hero">
-        <div class="container">
-            <h1 class="page-title">My Portfolio</h1>
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <h1 class="page-title ransom-text" style="font-size: 3.5rem;">The Archives</h1>
             <div class="breadcrumb">
-                <a href="index.html">Home</a> &bull; <span>Portfolio</span>
+                <a href="index.html">Home</a> &bull; <span>Work</span>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Portfolio Section -->
-    <section class="section">
-        <div class="container">
+        <!-- Portfolio Section -->
+        <section class="section">
             <!-- Filter Buttons -->
-            <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="film">Film & Cinema</button>
-                <button class="filter-btn" data-filter="marketing">Marketing</button>
-                <button class="filter-btn" data-filter="social">Social Auto-Initiatives</button>
+            <div class="portfolio-filter scrap no-init-rot" style="padding: 15px; margin-bottom: 50px; transform: rotate(-1deg);">
+                <div class="tape tape-top tape-red"></div>
+                <button class="filter-btn active" data-filter="all">Index</button>
+                <button class="filter-btn" data-filter="film">Cinema</button>
+                <button class="filter-btn" data-filter="marketing">Mktg</button>
+                <button class="filter-btn" data-filter="social">Social</button>
                 <button class="filter-btn" data-filter="beauty">Beauty</button>
             </div>
 
             <!-- Portfolio Grid -->
             <div class="portfolio-grid">
                 <!-- Item 1: Film -->
-                <div class="portfolio-item" data-category="film">
+                <div class="portfolio-item no-init-rot" data-category="film">
+                    <div class="tape tape-top tape-blue"></div>
                     <img src="https://images.unsplash.com/photo-1598899134739-24c46f58b8c0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Film Production" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <span class="portfolio-category">Film & Cinema</span>
-                        <h3 class="portfolio-title">Newborn Cinema Campaign</h3>
+                        <span class="portfolio-category bg-lined" style="padding: 2px 10px; border:1px solid; display:inline-block; margin-bottom:5px;">Film</span>
+                        <h3 class="portfolio-title ransom-text" style="font-size: 1.2rem; background: var(--color-paper); padding:2px;">NB Cinema</h3>
                     </div>
                 </div>
 
                 <!-- Item 2: Marketing -->
-                <div class="portfolio-item" data-category="marketing">
+                <div class="portfolio-item no-init-rot" data-category="marketing">
+                    <div class="tape tape-corner tape-red"></div>
                     <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Marketing Strategy" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <span class="portfolio-category">Marketing</span>
-                        <h3 class="portfolio-title">Brand Building Strategy</h3>
+                        <span class="portfolio-category" style="background:var(--color-terracotta); color:#fff; padding: 2px 10px; display:inline-block; margin-bottom:5px;">Marketing</span>
+                        <h3 class="portfolio-title ransom-text" style="font-size: 1.2rem; background: var(--color-paper); padding:2px;">Strategy</h3>
                     </div>
                 </div>
 
                 <!-- Item 3: Social -->
-                <div class="portfolio-item" data-category="social">
+                <div class="portfolio-item no-init-rot" data-category="social">
+                    <div class="tape tape-top"></div>
                     <img src="https://images.unsplash.com/photo-1593113589914-075568e090a1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Social Impact" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <span class="portfolio-category">Social Initiatives</span>
-                        <h3 class="portfolio-title">Community Development</h3>
+                        <span class="portfolio-category bg-lined" style="padding: 2px 10px; border:1px solid; display:inline-block; margin-bottom:5px;">Social</span>
+                        <h3 class="portfolio-title ransom-text" style="font-size: 1.2rem; background: var(--color-paper); padding:2px;">Community</h3>
                     </div>
                 </div>
 
                 <!-- Item 4: Beauty -->
-                <div class="portfolio-item" data-category="beauty">
+                <div class="portfolio-item no-init-rot" data-category="beauty">
+                    <div class="tape tape-corner tape-blue"></div>
                     <img src="https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Beauty Services" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <span class="portfolio-category">Beauty</span>
-                        <h3 class="portfolio-title">Editorial Makeup Portfolio</h3>
+                        <span class="portfolio-category" style="background:var(--color-dusty-blue); color:#fff; padding: 2px 10px; display:inline-block; margin-bottom:5px;">Beauty</span>
+                        <h3 class="portfolio-title ransom-text" style="font-size: 1.2rem; background: var(--color-paper); padding:2px;">Editorial</h3>
                     </div>
                 </div>
 
                 <!-- Item 5: Film -->
-                <div class="portfolio-item" data-category="film">
+                <div class="portfolio-item no-init-rot" data-category="film">
+                    <div class="tape tape-top tape-red"></div>
                     <img src="https://images.unsplash.com/photo-1626814026160-2237a95fc5a0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Film Set" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <span class="portfolio-category">Film & Cinema</span>
-                        <h3 class="portfolio-title">Eelam Cultural Documentary</h3>
+                        <span class="portfolio-category bg-lined" style="padding: 2px 10px; border:1px solid; display:inline-block; margin-bottom:5px;">Film</span>
+                        <h3 class="portfolio-title ransom-text" style="font-size: 1.2rem; background: var(--color-paper); padding:2px;">Docu</h3>
                     </div>
                 </div>
 
                 <!-- Item 6: Marketing -->
-                <div class="portfolio-item" data-category="marketing">
+                <div class="portfolio-item no-init-rot" data-category="marketing">
+                    <div class="tape tape-top"></div>
                     <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Content Creation" class="portfolio-img">
                     <div class="portfolio-overlay">
-                        <span class="portfolio-category">Marketing</span>
-                        <h3 class="portfolio-title">Digital Promo Content</h3>
+                        <span class="portfolio-category" style="background:var(--color-terracotta); color:#fff; padding: 2px 10px; display:inline-block; margin-bottom:5px;">Marketing</span>
+                        <h3 class="portfolio-title ransom-text" style="font-size: 1.2rem; background: var(--color-paper); padding:2px;">Digital Promo</h3>
                     </div>
                 </div>
             </div>
             
             <div style="text-align: center; margin-top: 50px;">
-                <p class="section-subtitle" style="margin: 0 auto 20px;">More creative works and in-depth case studies coming soon.</p>
-                <a href="contact.html" class="btn btn-primary">Start a New Project</a>
+                <p class="clean-anchor" style="margin: 0 auto 20px; display:block;">More works loading...</p>
+                <a href="contact.html" class="btn btn-primary" style="transform: rotate(2deg);">Let's Connect</a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
+        <!-- Footer -->
+        <footer class="footer">
             <div class="footer-content">
-                <a href="index.html" class="footer-logo">Vishalini<span>.</span></a>
-                <p class="footer-text">Free-spirited, curious, and fiercely independent. Designing narratives that matter.</p>
-                
-                <div class="social-links" style="justify-content: center;">
-                    <a href="#" class="social-link" aria-label="LinkedIn">in</a>
-                    <a href="#" class="social-link" aria-label="Instagram">ig</a>
-                    <a href="#" class="social-link" aria-label="Twitter">tw</a>
+                <p class="footer-text clean-anchor" style="color:var(--color-ink); background:transparent; border:none; border-bottom:2px dashed; padding:0;">Designing narratives that matter.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link">IN</a>
+                    <a href="#" class="social-link">IG</a>
+                    <a href="#" class="social-link">TW</a>
                 </div>
+                <p style="margin-top:20px; font-family:var(--font-anchor); font-size: 0.8rem;">&copy; '26 Vishalini K.</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 Vishalini Karikaran. All Rights Reserved.</p>
-            </div>
-        </div>
-    </footer>
+        </footer>
+
+        <div class="torn-edge"></div>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.toggle('active');
         });
         
-        // Close menu when clicking outside
         document.addEventListener('click', (e) => {
             if (!menuToggle.contains(e.target) && !navLinks.contains(e.target) && navLinks.classList.contains('active')) {
                 menuToggle.classList.remove('active');
@@ -18,23 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Sticky Header on Scroll
-    const header = document.querySelector('.header');
-    
-    // Add scroll class immediately if not at top on page load
-    if (window.scrollY > 50) {
-        header.classList.add('scrolled');
-    }
-    
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-
-    // 3. Highlight Active Link Based on URL
+    // 2. Active Link Based on URL
     const currentLocation = location.href;
     const navItems = document.querySelectorAll('.nav-item');
     
@@ -44,27 +27,63 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 4. Portfolio Filtering (for Portfolio Page)
+    // 3. Ransom Note Effect Generator
+    const ransomHeadings = document.querySelectorAll('.ransom-text');
+    const rClasses = ['rl-1', 'rl-2', 'rl-3', 'rl-4', 'rl-5', 'rl-6'];
+
+    ransomHeadings.forEach(heading => {
+        const text = heading.textContent.trim();
+        heading.innerHTML = '';
+        const words = text.split(/\s+/);
+        
+        words.forEach(word => {
+            const wordSpan = document.createElement('span');
+            wordSpan.className = 'ransom-word';
+            
+            for(let i = 0; i < word.length; i++) {
+                const charSpan = document.createElement('span');
+                charSpan.textContent = word[i];
+                // Random class, but occasionally fallback to bare text for the "accidental mismatch" effect
+                if(Math.random() > 0.1) {
+                    charSpan.className = 'ransom-letter ' + rClasses[Math.floor(Math.random() * rClasses.length)];
+                } else {
+                    charSpan.className = 'ransom-letter rl-bare';
+                }
+                
+                // Random rotation for extra chaos
+                const rot = (Math.random() * 10 - 5).toFixed(1);
+                charSpan.style.transform = `rotate(${rot}deg)`;
+                
+                wordSpan.appendChild(charSpan);
+            }
+            heading.appendChild(wordSpan);
+            
+            // Add a bare space between words
+            const spaceSpan = document.createElement('span');
+            spaceSpan.innerHTML = '&nbsp;';
+            heading.appendChild(spaceSpan);
+        });
+    });
+
+    // 4. Portfolio Filtering
     const filterBtns = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
     
     if (filterBtns.length > 0) {
         filterBtns.forEach(btn => {
             btn.addEventListener('click', () => {
-                // Remove active class from all buttons
                 filterBtns.forEach(b => b.classList.remove('active'));
-                
-                // Add active class to clicked button
                 btn.classList.add('active');
                 
                 const filterValue = btn.getAttribute('data-filter');
                 
                 portfolioItems.forEach(item => {
+                    item.style.transition = 'all 0.4s';
                     if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
                         item.style.display = 'block';
                         setTimeout(() => {
                             item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
+                            item.style.transform = 'scale(1) rotate(' + (Math.random() * 4 - 2) + 'deg)';
                         }, 50);
                     } else {
                         item.style.opacity = '0';
@@ -77,4 +96,14 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // 5. Randomly rotate scrap/photo elements slightly for more organic DIY feel
+    const scraps = document.querySelectorAll('.scrap, .photo-wrapper, .sticky-note');
+    scraps.forEach(scrap => {
+        const isHoverOnly = scrap.classList.contains('no-init-rot');
+        if(!isHoverOnly) {
+            const rot = (Math.random() * 4 - 2).toFixed(1);
+            scrap.style.transform = `rotate(${rot}deg)`;
+        }
+    });
 });
