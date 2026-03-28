@@ -55,6 +55,10 @@ body {
   position: relative;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 /* Analog film grain/noise overlay */
 body::after {
   content: "";
@@ -208,6 +212,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1;
   font-weight: 700;
   text-transform: uppercase;
+  max-width: 100%;
 }
 
 /* Random stylistic fallbacks */
@@ -283,6 +288,8 @@ HEADER & NAVIGATION (TAPE TABS)
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: 100%;
+  padding: 0 5px;
 }
 
 .logo {
@@ -312,7 +319,7 @@ HEADER & NAVIGATION (TAPE TABS)
   text-transform: uppercase;
   color: var(--color-ink);
   background: var(--color-kraft);
-  padding: 8px 15px;
+  padding: 12px 15px; /* Minimum 44px touch target height */
   border: 1px solid var(--color-ink);
   box-shadow: 2px 2px 0 var(--color-ink);
   border-bottom: none;
@@ -618,8 +625,10 @@ PORTFOLIO (PHOTO ALBUM)
   filter: grayscale(100%) contrast(120%);
 }
 
-.portfolio-item:hover .portfolio-img {
-  filter: grayscale(0%) contrast(110%);
+@media (hover: hover) and (pointer: fine) {
+  .portfolio-item:hover .portfolio-img {
+    filter: grayscale(0%) contrast(110%);
+  }
 }
 
 .portfolio-overlay {
@@ -703,21 +712,128 @@ FOOTER
   transform: rotate(2deg);
 }
 
-.social-links { display: flex; gap: 15px; margin-top: 20px; justify-content: center;}
+.social-links { display: flex; gap: 15px; margin-top: 20px; justify-content: center; flex-wrap: wrap; }
 .social-link {
   font-family: var(--font-sans);
   background: var(--color-ink);
   color: var(--color-paper);
-  padding: 5px 15px;
+  padding: 10px 15px; /* Increased to meet 44px minimum */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-transform: uppercase;
   border: none;
 }
 .social-link:hover { background: var(--color-terracotta); }
+
+/* Mobile Menu Toggle Button */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 44px;
+  height: 44px;
+  z-index: 100;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--color-ink);
+  transition: all 0.3s ease;
+}
+
+.menu-toggle.active span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
+.menu-toggle.active span:nth-child(2) { opacity: 0; }
+.menu-toggle.active span:nth-child(3) { transform: translateY(-10px) rotate(-45deg); }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .hero-container, .about-grid, .resume-grid, .contact-wrap { grid-template-columns: 1fr; }
   .sketchbook-page { margin: 10px; padding: 20px 10px; border-left-width: 10px; }
   .contact-info { border-right: none; border-bottom: 2px dashed var(--color-ink); }
-  .nav-links { flex-wrap: wrap; justify-content: center;}
+  
+  .header { position: relative; }
+  
+  .menu-toggle {
+    display: flex;
+  }
+  
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    background: var(--color-paper);
+    flex-direction: column;
+    padding: 20px;
+    border: 2px solid var(--color-ink);
+    box-shadow: 4px 4px 0 var(--color-dusty-blue);
+    z-index: 90;
+    gap: 10px;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .logo {
+    font-size: 1.3rem !important;
+    padding: 2px 5px !important;
+  }
+
+  .hero-title, .page-title, h1[style] {
+    font-size: 1.8rem !important;
+    white-space: normal;
+  }
+
+  div.ransom-word {
+    white-space: normal !important;
+    max-width: 100%;
+  }
+  
+  span.ransom-word {
+    white-space: normal !important;
+  }
+  
+  .ransom-letter {
+    padding: 2px 3px !important;
+    font-size: 0.9em !important;
+    margin: 0px !important;
+  }
+  
+  .hero-content {
+    padding: 20px !important;
+  }
+  
+  .experience-badge {
+    transform: scale(0.7) rotate(-15deg);
+    bottom: -10px;
+    left: -10px;
+  }
+  
+  .newspaper-column {
+    column-count: 1;
+    column-gap: 0;
+  }
+  
+  .about-img .vision-box {
+    right: 5px !important;
+    bottom: 5px !important;
+    max-width: 80% !important;
+    padding: 15px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo { font-size: 1.1rem !important; }
+  .hero-title, .page-title, h1[style] { font-size: 1.5rem !important; }
 }

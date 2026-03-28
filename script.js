@@ -58,9 +58,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             heading.appendChild(wordSpan);
             
-            // Add a bare space between words
+            // Add a normal space between words to allow wrapping
             const spaceSpan = document.createElement('span');
-            spaceSpan.innerHTML = '&nbsp;';
+            spaceSpan.className = 'ransom-space';
+            spaceSpan.innerHTML = ' ';
+            spaceSpan.style.display = 'inline-block';
+            spaceSpan.style.width = '10px';
             heading.appendChild(spaceSpan);
         });
     });
