@@ -109,4 +109,37 @@ document.addEventListener('DOMContentLoaded', () => {
             scrap.style.transform = `rotate(${rot}deg)`;
         }
     });
+
+    // 6. EmailJS Contact Form
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        // Initialize EmailJS with your public key
+        (function() {
+            emailjs.init("sYJci8LDDvnLEigdJ");
+        })();
+
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = 'Sending...';
+            submitBtn.disabled = true;
+
+            // Prepare parameters from the form
+            emailjs.sendForm('service_jog2j1r', 'template_gca605r', this)
+                .then(() => {
+                    alert('Post sent successfully! I will get back to you soon.');
+                    contactForm.reset();
+                })
+                .catch((error) => {
+                    console.error('EmailJS Error:', error);
+                    alert('Failed to send the post. Please try again later or contact me directly via email.');
+                })
+                .finally(() => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                });
+        });
+    }
 });
