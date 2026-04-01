@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (contactForm) {
         // Initialize EmailJS with your public key
         (function() {
-            emailjs.init("sYJci8LDDvnLEigdJ");
+            emailjs.init("vAXsCU4zFrUQB6KGK");
         })();
 
         contactForm.addEventListener('submit', function(event) {
@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             // Prepare parameters from the form
-            emailjs.sendForm('service_jog2j1r', 'template_gca605r', this)
+            emailjs.sendForm('service_8lpfjdt', 'template_nt0qn3l', this)
                 .then(() => {
                     alert('Post sent successfully! I will get back to you soon.');
                     contactForm.reset();
