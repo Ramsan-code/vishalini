@@ -134,7 +134,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 })
                 .catch((error) => {
                     console.error('EmailJS Error:', error);
-                    alert('Failed to send the post. Please try again later or contact me directly via email.');
+                    const errorMsg = error?.text || error?.message || 'Check your Authorized Domains in EmailJS dashboard.';
+                    alert('Failed to send the post. Error: ' + errorMsg);
                 })
                 .finally(() => {
                     submitBtn.innerText = originalBtnText;
